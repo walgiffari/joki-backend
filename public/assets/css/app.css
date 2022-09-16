@@ -1388,14 +1388,14 @@ input::placeholder {
 
 
 .form-check-input:checked {
-	background-color: #673ab7;
-    border-color: #673ab7;
+	background-color: green;
+    border-color: green;
 }
 
 
 .form-check-input[type=checkbox]:indeterminate {
-	background-color: rgba(104, 58, 183, 0.5);
-	border-color: rgba(104, 58, 183, 0.5);
+	background-color: rgba(58, 183, 116, 0.5);
+	border-color: rgba(58, 183, 116, 0.5);
 }
 
 

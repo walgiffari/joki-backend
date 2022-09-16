@@ -13,8 +13,8 @@
 							<div class="col-xl-6">
 								<div class="card-body p-5">
 									<div class="text-center">
-										<img src="/assets/images/logo-icon.png" width="80" alt="">
-										<h3 class="mt-4 font-weight-bold">Welcome Back</h3>
+										{{-- <img src="/assets/images/logo-icon.png" width="80" alt=""> --}}
+										<h3 class="mt-4 font-weight-bold" style="color: green">Welcome Back</h3>
 									</div>
 									<div class="">
 										<div class="d-grid">
@@ -30,11 +30,11 @@
 										<div class="form-body">
 											<form class="row g-3">
 												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label">Email Address</label>
+													<label for="inputEmailAddress" class="form-label" style="color: green;">Email Address</label>
 													<input type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
 												</div>
 												<div class="col-12">
-													<label for="inputChoosePassword" class="form-label">Enter Password</label>
+													<label for="inputChoosePassword" class="form-label" style="color:green;">Enter Password</label>
 													<div class="input-group" id="show_hide_password">
 														<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
@@ -45,15 +45,15 @@
 														<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
 													</div>
 												</div>
-												<div class="col-md-6 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
+												<div class="col-md-6 text-end">	<a href="authentication-forgot-password.html" style="color: green">Forgot Password ?</a>
 												</div>
 												<div class="col-12">
 													<div class="d-grid">
-														<button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
+														<button type="submit" class="btn btn-success" style="background-color: rgb(3, 155, 87)"><i class="bx bxs-lock-open"></i>Sign in</button>
 													</div>
 												</div>
 												<div class="col-12 text-center">
-													<p>Don't have an account yet? <a href="authentication-signup.html">Sign up here</a></p>
+													<p>Don't have an account yet? <a href="authentication-signup.html" style="color: green;">Sign up here</a></p>
 												</div>
 											</form>
 										</div>
@@ -61,7 +61,7 @@
 								</div>
 							 </div>
 							<div class="col-xl-6 bg-login-color d-flex align-items-center justify-content-center">
-								<img src="assets/images/login-images/login-frent-img.jpg" class="img-fluid" alt="...">
+								<img src="assets/images/login-images/login-frent-img.jpg" class="img-fluid" alt="..." style="height: 100%">
 							</div>
 						</div>
 						<!--end row-->
