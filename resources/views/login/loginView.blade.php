@@ -14,7 +14,7 @@
 								<div class="card-body p-5">
 									<div class="text-center">
 										{{-- <img src="/assets/images/logo-icon.png" width="80" alt=""> --}}
-										<h3 class="mt-4 font-weight-bold" style="color: green">Welcome Back</h3>
+										<h3 class="mt-4 font-weight-bold" style="color: green"><img src="{{ asset('assets/images/sticker/kazuha-sticker.png') }}" class="image-sticker" alt="" style="width: 150px;"> <img src="{{ asset('assets/images/sticker/yae-sticker.png') }}" class="image-sticker" alt="" style="width: 150px;">Welcome Back Moots!</h3>
 									</div>
 									<div class="">
 										<div class="d-grid">
