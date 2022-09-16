@@ -12,4 +12,11 @@ class LoginController extends Controller
             'title' => 'Selamat Datang di Portal Login Joki Aydan'
         ]);
     }
+
+    public function index_register()
+    {
+        return view('login.registerView', [
+            'title' => 'Register Akun'
+        ]);
+    }
 }

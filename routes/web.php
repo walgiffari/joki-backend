@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [LoginController::class, 'index_login'])->name('index_login');
+Route::get('/login', [LoginController::class, 'index_login'])->middleware('guest')->name('index_login');
 
-Route::get('/register', function () {
-    return view('login.registerView');
-});
+Route::get('/register', [LoginController::class, 'index_register'])->name('index_register');
