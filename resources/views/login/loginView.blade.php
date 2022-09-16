@@ -17,6 +17,15 @@
 										<h3 class="mt-4 font-weight-bold" style="color: green"><img src="{{ asset('assets/images/sticker/kazuha-sticker.png') }}" class="image-sticker" alt="" style="width: 150px;"> <img src="{{ asset('assets/images/sticker/yae-sticker.png') }}" class="image-sticker" alt="" style="width: 150px;">Welcome Back Moots!</h3>
 									</div>
 									<div class="">
+									
+									<button class="test-1">asd</button>
+
+									@if(session()->has('Error'))
+									{{ session('Error') }}
+									
+									
+									@endif
+
 										<div class="d-grid">
 											<a class="btn my-4 shadow-sm btn-white" href="javascript:;"> <span class="d-flex justify-content-center align-items-center">
 											<img class="me-2" src="/assets/images/icons/search.svg" width="16" alt="Image Description">
@@ -28,16 +37,28 @@
 											<hr>
 										</div>
 										<div class="form-body">
-											<form class="row g-3">
+											<form action="{{ route('auths') }}" method="post" class="row g-3">
+												@csrf
 												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label" style="green">Email Address</label>
-													<input type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
-												</div>
-												<div class="col-12">
-													<label for="inputChoosePassword" class="form-label">Enter Password</label>
-													<div class="input-group" id="show_hide_password">
-														<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<label for="inputUsername" class="form-label" style="green">Username</label>
+													<input type="text" name="username" class="form-control" id="inputEmailAddress" placeholder="Username" value="{{ old('username') }}">
+													@error('username')
+													<div class="validasi">
+														{{ $message }}
 													</div>
+													@enderror
+												</div>
+
+												<div class="col-12">
+													<label for="inputChoosePassword" class="form-label">Password</label>
+													<div class="input-group" id="show_hide_password">
+														<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													</div>
+													@error('password')
+													<div class="validasi">
+														{{ $message }}
+													</div>
+													@enderror
 												</div>
 												<div class="col-md-6">
 													<div class="form-check form-switch">
@@ -53,7 +74,7 @@
 													</div>
 												</div>
 												<div class="col-12 text-center">
-													<p>Don't have an account yet? <a href="authentication-signup.html" style="color: green;">Sign up here</a></p>
+													<p>Don't have an account yet? <a href="{{ route('index_register') }}" style="color: green;">Sign up here</a></p>
 												</div>
 											</form>
 										</div>

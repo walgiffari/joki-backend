@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [LoginController::class, 'index_login'])->middleware('guest')->name('index_login');
+// System Login //
 
 Route::get('/register', [LoginController::class, 'index_register'])->name('index_register');
+Route::post('/register/store', [LoginController::class, 'register_store'])->name('register_store');
+
+Route::get('/login', [LoginController::class, 'index_login'])->middleware('guest')->name('index_login');
+Route::post('/login/auth', [LoginController::class, 'auths'])->name('auths');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// System Login //

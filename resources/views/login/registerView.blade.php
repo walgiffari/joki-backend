@@ -23,23 +23,24 @@
 											<hr>
 										</div>
 										<div class="form-body">
-											<form class="row g-3">
+											<form action="{{ route('register_store') }}" method="post" class="row g-3">
+												@csrf
 												<div class="col-sm-6">
 													<label for="inputFirstName" class="form-label" style="color: green;">First Name</label>
-													<input type="text" class="form-control" id="inputFirstName" placeholder="Ethan">
+													<input type="text" name="firstname" class="form-control" id="inputFirstName" placeholder="Firstname">
 												</div>
 												<div class="col-sm-6">
 													<label for="inputLastName" class="form-label" style="color: green;">Last Name</label>
-													<input type="text" class="form-control" id="inputLastName" placeholder="Scelter">
+													<input type="text" name="lastname" class="form-control" id="inputLastName" placeholder="Lastname">
 												</div>
 												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label" style="color: green;">Username</label>
-													<input type="text" class="form-control" id="inputEmailAddress" placeholder="aydanjoki">
+													<label for="inputUserAddress" class="form-label" style="color: green;">Username</label>
+													<input type="text" name="username" class="form-control" id="inputEmailAddress" placeholder="aydanjoki">
 												</div>
 												<div class="col-12">
 													<label for="inputChoosePassword" class="form-label" style="color: green;">Password</label>
 													<div class="input-group" id="show_hide_password">
-														<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+														<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
 												</div>
 	
@@ -51,7 +52,7 @@
 												</div>
 												<div class="col-12">
 													<div class="d-grid">
-														<button type="submit" class="btn btn-success"><i class="bx bx-user me-1"></i>Sign up</button>
+														<button type="submit" class="btn btn-success"><i class="bx bx-user me-1"></i>Daftar</button>
 													</div>
 												</div>
 											</form>

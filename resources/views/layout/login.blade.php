@@ -14,12 +14,18 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto&display=swap" />
+	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
 	<!-- Icons CSS -->
 	<link rel="stylesheet" href="/assets/css/icons.css" />
 	<!-- App CSS -->
 	<link rel="stylesheet" href="/assets/css/app.css" />
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/assets/css/custom.css">
+	<!--plugins-->
+	<link rel="stylesheet" href="assets/plugins/notifications/css/lobibox.min.css" />
+	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 </head>
 
 
@@ -27,6 +33,16 @@
 
 <!--plugins-->
 <script src="/assets/js/jquery.min.js"></script>
+<!--plugins-->
+<script src="/assets/plugins/simplebar/js/simplebar.min.js"></script>
+<script src="/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+<script src="/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+<!--notification js -->
+<script src="/assets/plugins/notifications/js/lobibox.min.js"></script>
+<script src="/assets/plugins/notifications/js/notifications.min.js"></script>
+<script src="/assets/plugins/notifications/js/notification-custom-script.js"></script>
+<!--notification js -->
+<script src="/assets/js/custom.js"></script>
 <!--Password show & hide js -->
 <script>
 	$(document).ready(function () {
