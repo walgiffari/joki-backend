@@ -415,7 +415,7 @@ a:hover {
 
 	color: #fff;
 
-	background-color: #673ab7;
+	background-color: #3ab77b;
 
 	display: flex;
 
@@ -1170,11 +1170,13 @@ sup {
 
 .sidebar-wrapper .metismenu .mm-active>a {
 
-	color: #673ab7;
+	color: rgb(66, 129, 66);
 
 	text-decoration: none;
 
-	background: rgb(103 58 183 / 10%);
+	background: rgba(17, 145, 53, 0.214);
+
+	border-radius: 3%;
 
 }
 

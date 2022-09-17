@@ -5,37 +5,39 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>{{ $title }}</title>
 	<!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png" />
 	<!-- Vector CSS -->
-	<link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+	<link href="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 	<!--plugins-->
-	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link href="/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 	<!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet" />
-	<script src="assets/js/pace.min.js"></script>
+	<link href="/assets/css/pace.min.css" rel="stylesheet" />
+	<script src="/assets/js/pace.min.js"></script>
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto&display=swap" />
 	<!-- Icons CSS -->
-	<link rel="stylesheet" href="assets/css/icons.css" />
+	<link rel="stylesheet" href="/assets/css/icons.css" />
 	<!-- App CSS -->
-	<link rel="stylesheet" href="assets/css/app.css" />
-	<link rel="stylesheet" href="assets/css/dark-sidebar.css" />
-	<link rel="stylesheet" href="assets/css/dark-theme.css" />
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/dark-sidebar.css" />
+	<link rel="stylesheet" href="/assets/css/dark-theme.css" />
 </head>
 
 <body>
+
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!--sidebar-wrapper-->
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div class="">
-					<img src="assets/images/logo-icon.png" class="logo-icon-2" alt="" />
+					<img src="/assets/images/logo-icon.png" class="logo-icon-2" alt="" />
 				</div>
 				<div>
 					<h4 class="logo-text">Syndash</h4>
@@ -53,8 +55,8 @@
 					</a>
 				</li>
 				<li class="menu-label">Master Data</li>
-				<li>
-					<a href="emailbox.html">
+				<li class="{{ $title == 'Data Master Joki' ? 'mm-active' : '' }}">
+					<a href="{{ route('index_joki') }}">
 						<div class="parent-icon icon-color-7"><i class="bx bx-data"></i>
 						</div>
 						<div class="menu-title">Joki</div>
@@ -381,7 +383,7 @@
 										<p class="user-name mb-0">{{ auth()->user()->name }}</p>
 										<p class="designattion mb-0">Available</p>
 									</div>
-									<img src="assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar">
+									<img src="/assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar">
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">	
@@ -395,7 +397,7 @@
 										class="bx bx-wallet"></i><span>Earnings</span></a>
 								<a class="dropdown-item" href="javascript:;"><i
 										class="bx bx-cloud-download"></i><span>Downloads</span></a>
-								<div class="dropdown-divider mb-0"></div>	<a class="dropdown-item" href="javascript:;"><i
+								<div class="dropdown-divider mb-0"></div>	<a class="dropdown-item" href="#" id="logout-dashboard"><i
 										class="bx bx-power-off"></i><span>Logout</span></a>
 							</div>
 						</li>
@@ -429,28 +431,90 @@
 		</header>
 		
 
+
 		@yield('container')
 
 
 
+		<!--end page-wrapper-->
+		<!--start overlay-->
+		<div class="overlay toggle-btn-mobile"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<!--footer -->
+		<div class="footer">
+			<p class="mb-0">Aydan @2022 | Developed By Team &hearts;</a>
+			</p>
+		</div>
+		<!-- end footer -->
+
+	</div>
+	
+	<!--start switcher-->
+	<div class="switcher-body">
+		<button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bx bx-cog bx-spin"></i></button>
+		<div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
+		  <div class="offcanvas-header border-bottom">
+			<h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+		  </div>
+		  <div class="offcanvas-body">
+			<h6 class="mb-0">Theme Variation</h6>
+			<hr>
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="lightmode" value="option1" checked>
+			  <label class="form-check-label" for="lightmode">Light</label>
+			</div>
+			<hr>
+			<div class="form-check form-check-inline">
+			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="darkmode" value="option2">
+			  <label class="form-check-label" for="darkmode">Dark</label>
+			</div>
+			<hr>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="darksidebar" value="option3">
+				<label class="form-check-label" for="darksidebar">Semi Dark</label>
+			  </div>
+			  <hr>
+			 <div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="ColorLessIcons" value="option3">
+				<label class="form-check-label" for="ColorLessIcons">Color Less Icons</label>
+			  </div>
+		  </div>
+		</div>
+	   </div>
+	   <!--end switcher-->
+
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	
 	<!--plugins-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
-	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 	<!-- Vector map JavaScript -->
-	<script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-	<script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-	<script src="assets/plugins/vectormap/jquery-jvectormap-in-mill.js"></script>
-	<script src="assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js"></script>
-	<script src="assets/plugins/vectormap/jquery-jvectormap-uk-mill-en.js"></script>
-	<script src="assets/plugins/vectormap/jquery-jvectormap-au-mill.js"></script>
-	<script src="assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
-	<script src="assets/js/index2.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-in-mill.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-uk-mill-en.js"></script>
+	<script src="/assets/plugins/vectormap/jquery-jvectormap-au-mill.js"></script>
+	<script src="/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+	<script src="/assets/js/index2.js"></script>
+	<script src="/assets/js/custom.js"></script>
 	<!-- App JS -->
-	<script src="assets/js/app.js"></script>
+	<script src="/assets/js/app.js"></script>
+
+	<script type="text/javascript">
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		</script>
+
+
 </body>
 
 </html>

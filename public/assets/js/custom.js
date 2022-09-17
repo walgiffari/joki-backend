@@ -27,7 +27,6 @@ $('#submit-login').on('click', function(){
 
 $('#logout-dashboard').on('click', function(e){
     e.preventDefault()
-
     $.ajax({
         url: '/logout',
         type: 'post',

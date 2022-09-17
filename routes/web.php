@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JokiController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index_dashboard'])->middleware('auth')->name('dashboard');
 
 // Dashboard // 
+
+// Joki //
+Route::get('/super-admin/joki-master', [JokiController::class, 'index_joki'])->middleware('auth')->name('index_joki');
+// Joki //
