@@ -18,14 +18,6 @@
 									</div>
 									<div class="">
 									
-									<button class="test-1" onclick="anim4_noti()">asd</button>
-
-									@if(session()->has('Error'))
-									{{ session('Error') }}
-									
-									
-									@endif
-
 										<div class="d-grid">
 											<a class="btn my-4 shadow-sm btn-white" href="javascript:;"> <span class="d-flex justify-content-center align-items-center">
 											<img class="me-2" src="/assets/images/icons/search.svg" width="16" alt="Image Description">
