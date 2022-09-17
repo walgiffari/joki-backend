@@ -12,14 +12,29 @@ $('#submit-login').on('click', function(){
                 password:password,
             },
             success:function(res){
-                console.log(res)
+                e.currentTarget.submit()
+                window.location.href = '/dashboard'
             },
 
             error:function(res)
-            {
-               
+            {  
                 console.log(res)
             }
         });
     });
+});
+
+
+$('#logout-dashboard').on('click', function(e){
+    e.preventDefault()
+
+    $.ajax({
+        url: '/logout',
+        type: 'post',
+        success:function(res){
+            console.log(res)
+            window.location.href = "/login"
+        }
+    });
+
 });

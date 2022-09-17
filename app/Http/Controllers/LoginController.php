@@ -25,6 +25,7 @@ class LoginController extends Controller
 
     public function auths(Request $request)
     {
+
         $auth = $request->validate([
             'username' => 'required|min:4|max:16',
             'password' => 'required|min:4|max:16'
@@ -38,7 +39,6 @@ class LoginController extends Controller
 
         if (Auth::attempt($auth)) {
             $request->session()->regenerate();
-            return redirect()->intended('/register');
         }
     }
 
