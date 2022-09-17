@@ -18,7 +18,7 @@
 									</div>
 									<div class="">
 									
-									<button class="test-1">asd</button>
+									<button class="test-1" onclick="anim4_noti()">asd</button>
 
 									@if(session()->has('Error'))
 									{{ session('Error') }}
@@ -37,11 +37,11 @@
 											<hr>
 										</div>
 										<div class="form-body">
-											<form action="{{ route('auths') }}" method="post" class="row g-3">
+											<form action="{{ route('auths') }}" id="form-login" method="post" class="row g-3">
 												@csrf
 												<div class="col-12">
 													<label for="inputUsername" class="form-label" style="green">Username</label>
-													<input type="text" name="username" class="form-control" id="inputEmailAddress" placeholder="Username" value="{{ old('username') }}">
+													<input type="text" id="username-login" name="username" class="form-control" id="inputEmailAddress" placeholder="Username" value="{{ old('username') }}">
 													@error('username')
 													<div class="validasi">
 														{{ $message }}
@@ -52,7 +52,7 @@
 												<div class="col-12">
 													<label for="inputChoosePassword" class="form-label">Password</label>
 													<div class="input-group" id="show_hide_password">
-														<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+														<input type="password" id="password-login" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
 													@error('password')
 													<div class="validasi">
@@ -70,7 +70,7 @@
 												</div>
 												<div class="col-12">
 													<div class="d-grid">
-														<button type="submit" class="btn btn-success" style="background-color: rgb(3, 155, 87)"><i class="bx bxs-lock-open"></i>Sign in</button>
+														<button type="submit" id="submit-login" class="btn btn-success" style="background-color: rgb(3, 155, 87)"><i class="bx bxs-lock-open"></i>Sign in</button>
 													</div>
 												</div>
 												<div class="col-12 text-center">

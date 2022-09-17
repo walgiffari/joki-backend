@@ -40,7 +40,6 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/register');
         }
-        return back()->with('Error', 'Login Error!');
     }
 
     public function register_store(Request $request)

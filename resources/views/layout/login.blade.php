@@ -5,16 +5,17 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>{{ $title }}</title>
 	<!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png" />
 	<!-- loader-->
 	<link href="/assets/css/pace.min.css" rel="stylesheet" />
 	<script src="/assets/js/pace.min.js"></script>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto&display=swap" />
-	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/animate.css" rel="stylesheet" type="text/css" />
 	<!-- Icons CSS -->
 	<link rel="stylesheet" href="/assets/css/icons.css" />
 	<!-- App CSS -->
@@ -22,10 +23,10 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/assets/css/custom.css">
 	<!--plugins-->
-	<link rel="stylesheet" href="assets/plugins/notifications/css/lobibox.min.css" />
-	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/assets/plugins/notifications/css/lobibox.min.css" />
+	<link href="/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 </head>
 
 
@@ -60,5 +61,13 @@
 		});
 	});
 </script>
+
+<script type="text/javascript">
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+	</script>
 
 </html>
