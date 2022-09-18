@@ -11,8 +11,10 @@
 	<link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png" />
 	<!-- Vector CSS -->
 	<link href="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+		<!--Data Tables -->
+		<link href="/assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+		<link href="/assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
 	<!--plugins-->
-	
 	<link href="/assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
 	<link href="/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 	<link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
@@ -525,6 +527,21 @@
 		});
 		
 	</script>
+
+	<!--Data Tables js-->
+	<script src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			//Default data table
+			$('#example').DataTable();
+			var table = $('#example2').DataTable({
+				lengthChange: false,
+				buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+			});
+			table.buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+		});
+	</script>
+
 
 </body>
 

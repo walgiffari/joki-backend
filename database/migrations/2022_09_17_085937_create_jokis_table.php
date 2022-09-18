@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('jokis', function (Blueprint $table) {
             $table->id();
+            $table->text('slug');
             $table->text('nama_joki');
             $table->text('deskripsi');
             $table->unsignedBigInteger('harga');

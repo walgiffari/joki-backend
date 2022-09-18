@@ -21,32 +21,43 @@
             <!--end breadcrumb-->
             <div class="row">
                 <div class="col-xl-12 mx-auto">
-                    <h6 class="mb-0 text-uppercase">Form Master Joki</h6>
+                    <h6 class="mb-0 text-uppercase">Form Master Joki  <a href="{{ route('tambah_joki') }}" class="btn btn-primary" style="float: right;width: 100px;height: 30px;font-size: 12px;text-transform: uppercase">Buat Joki</a></h6>
                     <hr>
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('joki_store') }}" method="post">
-                                @csrf
-                                <div class="col-12 mb-2">
-                                    <div class="form-label">Nama Joki</div>
-                                    <input class="form-control" name="nama_joki" type="text" placeholder="Default input" aria-label="default input example">
-                                </div>
-
-                                <div class="col-12 mb-4">
-                                    <div class="form-label">Deskripsi</div>
-                                    <textarea name="deskripsi" class="my-editor form-control" id="my-editor" cols="30" rows="10"></textarea>
-                                </div>
-
-                                <div class="col-12 mb-4">
-                                    <div class="form-label">Harga</div>
-                                    <input id="harga" class="form-control" name="harga" type="text" placeholder="Default input" aria-label="default input example">
-                                </div>
-                                
-                                <div class="">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-        
-                            </form>
+                            <div class="table-responsive">
+								<table id="example" class="table" style="width:100%">
+									<thead>
+										<tr>
+                                            <th>No</th>
+											<th>Name Joki</th>
+											<th>Deskripsi</th>
+											<th>Harga</th>
+                                            <th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+                                        @foreach ($datajoki as $item)
+                                        <tr>
+                                            <td style="width:5%;">{{ $a++ }}</td>
+											<td>{{ $item->nama_joki }}</td>
+											<td>{!! $item->deskripsi !!}</td>
+											<td>{{ $item->harga }}</td>
+                                            <td style="width: 10%">
+                                                <div class="dropdown">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                  <li><a class="dropdown-item" href="{{ route('ubah_joki', $item->slug) }}">Ubah Joki</a></li>
+                                                  <li><a id="hapus-joki" data-id="{{ $item->id }}" data-slug="{{ $item->slug }}" class="dropdown-item" href="#">Hapus Joki</a></li>
+                                                </ul>
+                                              </div>
+                                            </td>
+										</tr>
+                                        @endforeach
+									</tbody>
+								</table>
+							</div>
                         </div>
                     </div>
                 </div>
