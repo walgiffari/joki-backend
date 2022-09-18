@@ -40,4 +40,5 @@ Route::get('/dashboard', [DashboardController::class, 'index_dashboard'])->middl
 
 // Joki //
 Route::get('/super-admin/joki-master', [JokiController::class, 'index_joki'])->middleware('auth')->name('index_joki');
+Route::post('/super-admin/joki-master/store', [JokiController::class, 'joki_store'])->middleware('auth')->name('joki_store');
 // Joki //

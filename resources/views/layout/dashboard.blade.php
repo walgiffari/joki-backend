@@ -12,6 +12,8 @@
 	<!-- Vector CSS -->
 	<link href="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 	<!--plugins-->
+	
+	<link href="/assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
 	<link href="/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 	<link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 	<link href="/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
@@ -30,6 +32,7 @@
 </head>
 
 <body>
+
 
 	<!-- wrapper -->
 	<div class="wrapper">
@@ -486,7 +489,7 @@
 	   </div>
 	   <!--end switcher-->
 
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/js/bootstrap.bundle.min.js"></script>
 	
 	<!--plugins-->
 	<script src="/assets/js/jquery.min.js"></script>
@@ -514,6 +517,14 @@
 		});
 		</script>
 
+	<script src="/assets/pluginCKeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace('my-editor',
+		{
+		  extraPlugins: 'colorbutton'
+		});
+		
+	</script>
 
 </body>
 
