@@ -76,7 +76,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="chat-box.html">
+					<a href="{{ route('room_chat') }}">
 						<div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
 						</div>
 						<div class="menu-title">Chat</div>

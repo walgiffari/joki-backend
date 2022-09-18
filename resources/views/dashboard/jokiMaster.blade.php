@@ -11,9 +11,9 @@
                 <div class="ps-0">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0" style="left: 0;">
-                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt" style="color: green"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+                            <li class="breadcrumb-item active" aria-current="page">Joki</li>
                         </ol>
                     </nav>
                 </div>
@@ -21,7 +21,7 @@
             <!--end breadcrumb-->
             <div class="row">
                 <div class="col-xl-12 mx-auto">
-                    <h6 class="mb-0 text-uppercase">Form Master Joki  <a href="{{ route('tambah_joki') }}" class="btn btn-primary" style="float: right;width: 100px;height: 30px;font-size: 12px;text-transform: uppercase">Buat Joki</a></h6>
+                    <h6 class="mb-0 text-uppercase">Tabel Master Joki  <a href="{{ route('tambah_joki') }}" class="btn btn-primary" style="float: right;width: 100px;height: 30px;font-size: 12px;text-transform: uppercase">Buat Joki</a></h6>
                     <hr>
                     <div class="card">
                         <div class="card-body">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JokiController;
 use App\Http\Controllers\LoginController;
@@ -46,3 +47,7 @@ Route::post('/super-admin/joki-master/store', [JokiController::class, 'joki_stor
 Route::get('/super-admin/joki-master/{slug}', [JokiController::class, 'ubah_joki'])->middleware('auth')->name('ubah_joki');
 Route::get('/super-admin/joki-master/{slug}/store', [JokiController::class, 'ubah_joki_store'])->middleware('auth')->name('ubah_joki_store');
 // Joki //
+
+// Chat //
+Route::get('/room-chat', [ChatController::class, 'room_chat'])->middleware('auth')->name('room_chat');
+// Chat //
