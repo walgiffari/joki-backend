@@ -41,11 +41,11 @@ Route::get('/dashboard', [DashboardController::class, 'index_dashboard'])->middl
 
 // Joki //
 Route::get('/super-admin/joki-master', [JokiController::class, 'index_joki'])->middleware('auth')->name('index_joki');
-Route::get('/super-admin/joki-master/{id}', [JokiController::class, 'hapus_joki'])->middleware('auth')->name('hapus_joki');
 Route::get('/super-admin/joki-master/tambah-joki', [JokiController::class, 'tambah_joki'])->middleware('auth')->name('tambah_joki');
 Route::post('/super-admin/joki-master/store', [JokiController::class, 'joki_store'])->middleware('auth')->name('joki_store');
 Route::get('/super-admin/joki-master/{slug}', [JokiController::class, 'ubah_joki'])->middleware('auth')->name('ubah_joki');
 Route::get('/super-admin/joki-master/{slug}/store', [JokiController::class, 'ubah_joki_store'])->middleware('auth')->name('ubah_joki_store');
+Route::get('/super-admin/joki-master/{id}', [JokiController::class, 'hapus_joki'])->middleware('auth')->name('hapus_joki');
 // Joki //
 
 // Chat //
